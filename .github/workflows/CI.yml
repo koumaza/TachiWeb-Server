@@ -11,7 +11,7 @@ jobs:
     - name: Environment - Apt
       run : |
         sudo apt-get install --allow-unauthenticated -y apt-transport-https && sudo apt-get update
-        sudo apt-get install --allow-unauthenticated -y --install-recommends realpath gcc-multilib g++-multilib rpm bsdtar jq rsync
+        sudo apt-get install --allow-unauthenticated -y --install-recommends gcc-multilib g++-multilib rpm bsdtar jq rsync
     - uses: actions/checkout@main
     - name: Set up JDK 1.8
       uses: actions/setup-java@main
