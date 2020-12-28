@@ -20,7 +20,7 @@ jobs:
     - name: Build
       shell: bash
       run: |
-        PROJECTROOTPATH=PWD
+        PROJECTROOTPATH=$PWD
         export PRP=${PROJECTROOTPATH}
 
         CI=false scripts/build.sh --linux && \
