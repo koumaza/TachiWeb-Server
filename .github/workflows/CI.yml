@@ -6,8 +6,18 @@ on:
     branches: '*'
 jobs:
   Build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [10]
+
     steps:
+    - uses: actions/checkout@main
+    - name: Use Node.js ${{ matrix.node-version }}.x
+      uses: actions/setup-node@main
+      with:
+        node-version: ${{ matrix.node-version }}
+        check-latest: true
     - name: Environment - Apt
       run : |
         sudo apt-get install --allow-unauthenticated -y apt-transport-https && sudo apt-get update
