@@ -21,7 +21,7 @@ jobs:
     - name: Environment - Apt
       run : |
         sudo apt-get install --allow-unauthenticated -y apt-transport-https && sudo apt-get update
-        sudo apt-get install --allow-unauthenticated -y --install-recommends gcc-multilib g++-multilib rpm bsdtar jq rsync
+        sudo apt-get install --allow-unauthenticated -y --install-recommends gcc-multilib g++-multilib rpm libarchive-tools jq rsync
     - uses: actions/checkout@main
       with:
         submodules: 'true'
