@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [11,12,13,14,15]
+        node-version: [8,15-ea]
 
     steps:
     - uses: actions/checkout@main
-    - name: Use Node.js ${{ matrix.node-version }}.x
+    - name: Use Node.js 15.x
       uses: actions/setup-node@main
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 15
         check-latest: true
     - name: Environment - Apt
       run : |
@@ -25,10 +25,10 @@ jobs:
     - uses: actions/checkout@main
       with:
         submodules: 'true'
-    - name: Set up JDK 8
+    - name: Set up JDK ${{ matrix.node-version }}
       uses: actions/setup-java@main
       with:
-        java-version: 8
+        java-version: ${{ matrix.node-version }}
     - name: Build
       shell: bash
       run: |
