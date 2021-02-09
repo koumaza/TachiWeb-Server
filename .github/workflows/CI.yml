@@ -25,10 +25,10 @@ jobs:
     - uses: actions/checkout@main
       with:
         submodules: 'true'
-    - name: Set up JDK 1.8
+    - name: Set up JDK 15-ea
       uses: actions/setup-java@main
       with:
-        java-version: 1.8
+        java-version: 15-ea
     - name: Build
       shell: bash
       run: |
