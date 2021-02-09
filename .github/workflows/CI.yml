@@ -36,7 +36,7 @@ jobs:
         export PRP=${PROJECTROOTPATH}
 
         CI=false scripts/build.sh --linux && \
-        cd ${PRP}/bootui/tachiweb-bootstrap && bash ../../scripts/buildWindowsInDocker.sh
+        cd ${PRP}/bootui/tachiweb-bootstrap && bash -c "cd bootui/tachiweb-bootstrap && bash ../../scripts/buildWindowsInDocker.sh"
         cd ${PRP}/bootui/tachiweb-bootstrap/dist/ && zip -r TachiWeb-win32-portable.zip win-ia32-unpacked
         cd ${PRP}/bootui/tachiweb-bootstrap/dist/ && zip -r TachiWeb-win64-portable.zip win-unpacked
         # bash -c 'echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc'
