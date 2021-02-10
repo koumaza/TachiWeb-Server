@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [8,10,15,17-ea]
+        node-version: [8,9,10]
 
     steps:
     - uses: actions/checkout@main
